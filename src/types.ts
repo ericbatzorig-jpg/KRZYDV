@@ -22,3 +22,11 @@ export interface CareerPlanStep {
   title: string;
   desc: string;
 }
+
+export interface ServiceItem {
+  id: number;
+  title: string;
+  description: string;
+  price: string;
+}
+

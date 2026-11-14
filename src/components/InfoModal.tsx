@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, ExternalLink, Gamepad2, Briefcase, Sparkles, BookOpen, Utensils, Music, Film, CheckCircle2, Heart } from 'lucide-react';
 import { myWorks, personalFacts, bankerPlan, BASE_NETLIFY_URL } from '../data/portfolioData';
 
@@ -15,10 +15,16 @@ export const InfoModal: React.FC<InfoModalProps> = ({
 }) => {
   const [activeTab, setActiveTab] = useState<'about' | 'works' | 'banker' | 'facts'>(initialTab);
 
+  useEffect(() => {
+    if (isOpen) {
+      setActiveTab(initialTab);
+    }
+  }, [isOpen, initialTab]);
+
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200" onClick={onClose}>
       <div
         className="relative w-full max-w-3xl max-h-[90vh] bg-[#F5F8EF] rounded-3xl border border-[#DAE7C7] shadow-2xl flex flex-col overflow-hidden text-[#101410]"
         onClick={(e) => e.stopPropagation()}

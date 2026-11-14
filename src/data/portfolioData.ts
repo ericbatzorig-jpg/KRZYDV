@@ -1,6 +1,32 @@
-import { WorkItem, FactItem, CareerPlanStep } from '../types';
+import { WorkItem, FactItem, CareerPlanStep, ServiceItem } from '../types';
 
 export const BASE_NETLIFY_URL = 'https://rococo-parfait-b5fafe.netlify.app/';
+export const DISCORD_WEBHOOK_URL =
+  'https://discord.com/api/webhooks/1571048343893844028/k4J_WRZ1KgbuHeuU1Ew5JFczWPHs04qrDpkSVTiPSsiS2_rMmNgHsvjzJqABCJYQSVV8';
+
+export const services: ServiceItem[] = [
+  {
+    id: 1,
+    title: 'Game OST Selection 🎮',
+    description:
+      'Finding the perfect video game soundtracks to match the mood, atmosphere, and style of your videos.',
+    price: '15,000₮'
+  },
+  {
+    id: 2,
+    title: 'Meme Reference Finding 😂',
+    description:
+      'Finding funny memes, reaction images, and internet references to make your videos more entertaining.',
+    price: '10,000₮'
+  },
+  {
+    id: 3,
+    title: 'Visual Support Finding 🖼️',
+    description:
+      'Finding relevant photos, images, and other visual materials to support your video content.',
+    price: '12,000₮'
+  }
+];
 
 /**
  * 10 cards corresponding directly to the 10 video grid tiles
